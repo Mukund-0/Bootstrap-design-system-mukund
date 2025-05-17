@@ -1,20 +1,19 @@
+:root {
+    --primary-color: #05F2C7;     /* Neon Aqua */
+    --secondary-color: #024059;  /* Slate Blue */
+    --highlight-color: #F2E205;  /* Electric Yellow */
+    --neutral-color: #033859;    /* Deep Navy */
+    --text-color: #F2E205;       /* Bright Yellow */
+    --blank: #000000;            /* Black background */
+    --primary-font: "Poppins", sans-serif;
+    --secondary-font: "Merriweather", serif;
+}
 
 body {
-    background-color: var(--highlight-color);
+    background-color: var(--blank);
     font-family: var(--primary-font);
     font-size: 16px;
     color: var(--text-color);
-}
-
-:root {
-    --primary-color: #FF6F61; 
-    --secondary-color: #FF9B85; 
-    --highlight-color: #F8D7B9; 
-    --neutral-color: #F08080; 
-    --text-color: #3E2723; 
-    --blank: #F5E0D1; /* Removed the extra / */
-    --primary-font: "Poppins", sans-serif;
-    --secondary-font: "Merriweather", serif;
 }
 
 p, a, li {
@@ -31,12 +30,49 @@ p.italics {
     font-weight: 700;
 }
 
-h2 {
-    font-size: 1.4rem;
-    color: var(--text-color);
+.container {
+    padding: 40px;
+    background-color: var(--neutral-color);
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(5, 242, 199, 0.2);
 }
 
-/* Button Styles with Gradient */
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+    color: var(--highlight-color);
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.6rem;
+}
+
+h6 {
+    font-size: 1.4rem;
+}
+
+h1.emphasized, h2.emphasized, h3.emphasized {
+    color: var(--highlight-color);
+}
+
+/* Buttons */
 .btn {
     text-transform: lowercase;
     font-family: var(--primary-font);
@@ -46,55 +82,52 @@ h2 {
     border: none;
 }
 
-/* Gradient for Primary Button */
+/* Gradient Buttons */
 .btn-primary {
-    background: linear-gradient(45deg, #FF6F61, #FF9B85); 
-    color: white;
+    background: linear-gradient(45deg, var(--primary-color), var(--highlight-color));
+    color: black;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, #FF9B85, #FF6F61); 
-    color: white;
+    background: linear-gradient(45deg, var(--highlight-color), var(--primary-color));
+    color: black;
 }
 
-/* Gradient for Secondary Button */
 .btn-secondary {
-    background: linear-gradient(45deg, #FF9B85, #FF6F61); 
+    background: linear-gradient(45deg, var(--secondary-color), var(--neutral-color));
     color: white;
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(45deg, #FF6F61, #FF9B85); 
+    background: linear-gradient(45deg, var(--neutral-color), var(--secondary-color));
     color: white;
 }
 
-/* Outline Buttons with Sunset gradient border */
+/* Outline Buttons */
 .btn-outline-primary {
-    color: #FF6F61;
-    border: 2px solid #FF6F61;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
     background: transparent;
 }
 
 .btn-outline-primary:hover {
-    background: #FF6F61;
-    color: white;
-    border: 2px solid #FF6F61;
+    background: var(--primary-color);
+    color: black;
 }
 
-/* Outline for Secondary Buttons */
 .btn-outline-secondary {
-    color: #FF9B85;
-    border: 2px solid #FF9B85;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
     background: transparent;
 }
 
 .btn-outline-secondary:hover {
-    background: #FF9B85;
+    background: var(--secondary-color);
     color: white;
-    border: 2px solid #FF9B85;
 }
 
-.btn-outline-success { 
+/* Bootstrap default outline overrides */
+.btn-outline-success {
     color: #28a745;
     border-color: #28a745;
     border: 2px solid #28a745;
@@ -103,7 +136,6 @@ h2 {
 .btn-outline-success:hover {
     background-color: #28a745;
     color: white;
-    border-color: #28a745;
 }
 
 .btn-outline-danger {
@@ -115,7 +147,6 @@ h2 {
 .btn-outline-danger:hover {
     background-color: #dc3545;
     color: white;
-    border-color: #dc3545;
 }
 
 .btn-outline-warning {
@@ -126,8 +157,7 @@ h2 {
 
 .btn-outline-warning:hover {
     background-color: #ffc107;
-    color: rgb(3, 3, 3);
-    border-color: #ffc107;
+    color: black;
 }
 
 /* Slider */
@@ -140,56 +170,5 @@ h2 {
 }
 
 .carousel-item img:hover {
-    filter: brightness(1); 
-}
-
-/* Emphasized Text */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--primary-color);
-}
-
-h1.emphasized, h2.emphasized, h3.emphasized {
-    color: var(--neutral-color);
-}
-
-/* Heading Styles */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--primary-font);
-}
-
-h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-}
-
-h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-}
-
-h3 {
-    font-size: 2rem;
-    color: var(--secondary-color);
-}
-
-h4 {
-    font-size: 1.8rem;
-    color: var(--neutral-color);
-}
-
-h5 {
-    font-size: 1.6rem;
-    color: var(--neutral-color);
-}
-
-h6 {
-    font-size: 1.4rem;
-    color: var(--neutral-color);
-}
-
-.container {
-    padding: 40px;
-    background-color: var(--blank);
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(226, 224, 224, 0.1);
+    filter: brightness(1.1); 
 }
